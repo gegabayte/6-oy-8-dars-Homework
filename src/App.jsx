@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import './App.css'
 
-function WeatherCard({ city, temperature, description }) {
+function Card({ city, temperature, description }) {
   return (
     <div className=" my-4 card shadow p-3 mb-5 bg-body-tertiary rounded">
       <div className="card-body">
-        <div className="team d-flex justify-content-center">
+        <div className="team d-flex justify-content-center flex-wrap">
           <h5 style={{fontSize: '15px'}} className="card-title mx-5">Shahar: <span style={{fontSize: '12px', color: 'lightgrey'}}>{city}</span></h5>
-          <p style={{fontSize: '15px'}} className="card-text">Harorat: <span style={{fontSize: '12px', color: 'red'}}>{temperature}</span><span style={{color: 'blue'}}>°C</span></p>
+          <p style={{fontSize: '15px'}} className="card-text">Harorat: <span style={{fontSize: '12px', color: 'red'}}>{temperature}</span><span style={{color: 'blue',fontSize: '12px'}}>°C</span></p>
         </div>
         <p style={{color: '#240A34', fontSize: '15px'}} className="card-text text-center mt-5">Brief information : { <span style={{color: '#124076', fontSize: '12px'}}>{description}</span>}</p>
       </div>
@@ -76,7 +76,7 @@ function App() {
       {weatherData && (
         <div className="row justify-content-center">
           <div className="col-md-6">
-            <WeatherCard
+            <Card
               city={weatherData.city}
               temperature={weatherData.temperature}
               description={weatherData.description}
